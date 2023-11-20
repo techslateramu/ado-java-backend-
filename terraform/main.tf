@@ -47,9 +47,9 @@ module "function_app" {
   # os_type                             = var.fapp_os_type
   # funcion_app_version                 = var.ers_function_app_functions_extension_version
 
-  app_settings                        = local.app_settings
-  site_config                         = local.site_config
-  identity                            = var.identity
+  # app_settings                        = local.app_settings
+  # site_config                         = local.site_config
+  # identity                            = var.identity
   # create_function_app_slot            = var.create_function_app_slot
   tags                                = merge(var.tags, var.specific_tags)
 
