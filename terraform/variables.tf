@@ -30,3 +30,9 @@ variable "app_in_daily_data_cap_in_gb"                  { default = "1" }
 variable "app_in_daily_data_cap_notifications_disabled" { default = false  }
 variable "app_in_disable_ip_masking"                    { default = false  }
 variable "app_in_retention_in_days"                     { default = 30 }
+
+variable "identity" { 
+    default = [{
+                type = "SystemAssigned"
+    }]
+}

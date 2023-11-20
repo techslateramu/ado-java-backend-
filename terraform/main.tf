@@ -42,15 +42,15 @@ module "function_app" {
   sub_project                         = var.sub_project
   resource_group_name                 = module.resource_group.name
   app_service_plan_id                 = module.app_service_plan.app_service_id
-  storage_account_name                = module.storage_account.storage_account_name
-  storage_account_primary_access_key  = module.storage_account.storage_primary_access_key
-  os_type                             = var.fapp_os_type
-  funcion_app_version                 = var.ers_function_app_functions_extension_version
+  # storage_account_name                = module.storage_account.storage_account_name
+  # storage_account_primary_access_key  = module.storage_account.storage_primary_access_key
+  # os_type                             = var.fapp_os_type
+  # funcion_app_version                 = var.ers_function_app_functions_extension_version
 
   app_settings                        = local.app_settings
   site_config                         = local.site_config
   identity                            = var.identity
-  create_function_app_slot            = var.create_function_app_slot
+  # create_function_app_slot            = var.create_function_app_slot
   tags                                = merge(var.tags, var.specific_tags)
 
 }
