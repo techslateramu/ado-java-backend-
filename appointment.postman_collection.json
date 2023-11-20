@@ -1,0 +1,565 @@
+{
+	"info": {
+		"_postman_id": "25a993e0-e322-48ab-ad66-c6d0adc26819",
+		"name": "appointment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18808982"
+	},
+	"item": [
+		{
+			"name": "create appointment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"appointmentDateTime\": \"10-24-2022 10:22:00\",\r\n    \"appointmentName\": \"appointment 1\",\r\n    \"appointmentDuration\": \"00:30:30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/appointment",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"appointment"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create appointment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"appointmentDateTime\": \"10-27-2022 10:22:00\",\r\n    \"appointmentName\": \"appointment 1\",\r\n    \"appointmentDuration\": \"30:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/appointment",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointment"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Oct 2022 05:33:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"message\": \"Appointment Details Saved Successfully\",\n    \"data\": {\n        \"appointmentId\": 1,\n        \"appointmentDateTime\": \"10-27-2022 10:22:00\",\n        \"appointmentName\": \"appointment 1\",\n        \"appointmentDuration\": 108000000,\n        \"delete\": false\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "update appointment",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"appointmentDateTime\": \"10-27-2022 10:22:00\",\r\n    \"appointmentName\": \"appointment 1\",\r\n    \"appointmentDuration\": \"00:30:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/appointment?appointmentId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"appointment"
+					],
+					"query": [
+						{
+							"key": "appointmentId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update appointment",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"appointmentDateTime\": \"10-27-2022 10:22:00\",\r\n    \"appointmentName\": \"appointment 1\",\r\n    \"appointmentDuration\": \"00:30:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/appointment?appointmentId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointment"
+							],
+							"query": [
+								{
+									"key": "appointmentId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Oct 2022 05:36:13 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"message\": \"Appointment Details Updated Successfully\",\n    \"data\": {\n        \"appointmentId\": 1,\n        \"appointmentDateTime\": \"10-27-2022 10:22:00\",\n        \"appointmentName\": \"appointment 1\",\n        \"appointmentDuration\": 1800000,\n        \"delete\": false\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "delete appointment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/appointment?appointmentId=4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"appointment"
+					],
+					"query": [
+						{
+							"key": "appointmentId",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete appointment",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/appointment?appointmentId=4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointment"
+							],
+							"query": [
+								{
+									"key": "appointmentId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Oct 2022 05:37:37 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"message\": \"Appointment Details Deleted Successfully\",\n    \"data\": {\n        \"appointmentId\": 4,\n        \"appointmentDateTime\": \"10-31-2022 10:22:00\",\n        \"appointmentName\": \"appointment 4\",\n        \"appointmentDuration\": 2700000,\n        \"delete\": true\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get appointment by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/appointment?appointmentId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"appointment"
+					],
+					"query": [
+						{
+							"key": "appointmentId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get appointment by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/appointment?appointmentId=3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointment"
+							],
+							"query": [
+								{
+									"key": "appointmentId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Oct 2022 05:38:20 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"message\": \"Appointment Details Found Successfully\",\n    \"data\": {\n        \"appointmentId\": 3,\n        \"appointmentDateTime\": \"10-30-2022 10:22:00\",\n        \"appointmentName\": \"appointment 3\",\n        \"appointmentDuration\": \"00:00:2700000\",\n        \"delete\": false\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get all appointments by date",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fromDate\": \"10-15-2022 10:22:00\",\r\n    \"toDate\": \"10-15-2022 10:22:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/appointment/filter",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"appointment",
+						"filter"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get all appointments by date",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fromDate\": \"10-25-2022 00:22:00\",\r\n    \"toDate\": \"10-29-2022 00:22:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/appointment/filter",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointment",
+								"filter"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Oct 2022 05:39:06 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"message\": \"Appointment Details Found Successfully\",\n    \"data\": [\n        {\n            \"appointmentId\": 1,\n            \"appointmentDateTime\": \"10-27-2022 10:22:00\",\n            \"appointmentName\": \"appointment 1\",\n            \"appointmentDuration\": \"00:00:1800000\",\n            \"delete\": false\n        },\n        {\n            \"appointmentId\": 2,\n            \"appointmentDateTime\": \"10-28-2022 10:22:00\",\n            \"appointmentName\": \"appointment 2\",\n            \"appointmentDuration\": \"00:00:2700000\",\n            \"delete\": false\n        }\n    ]\n}"
+				},
+				{
+					"name": "get all appointments",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fromDate\": null,\r\n    \"toDate\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/appointment/filter",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointment",
+								"filter"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Oct 2022 05:39:47 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"message\": \"Appointment Details Found Successfully\",\n    \"data\": [\n        {\n            \"appointmentId\": 1,\n            \"appointmentDateTime\": \"10-27-2022 10:22:00\",\n            \"appointmentName\": \"appointment 1\",\n            \"appointmentDuration\": \"00:00:1800000\",\n            \"delete\": false\n        },\n        {\n            \"appointmentId\": 2,\n            \"appointmentDateTime\": \"10-28-2022 10:22:00\",\n            \"appointmentName\": \"appointment 2\",\n            \"appointmentDuration\": \"00:00:2700000\",\n            \"delete\": false\n        },\n        {\n            \"appointmentId\": 3,\n            \"appointmentDateTime\": \"10-30-2022 10:22:00\",\n            \"appointmentName\": \"appointment 3\",\n            \"appointmentDuration\": \"00:00:2700000\",\n            \"delete\": false\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
