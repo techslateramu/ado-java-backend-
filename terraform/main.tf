@@ -34,19 +34,35 @@ module "app_service_plan" {
   tags                                        = merge(var.tags, var.specific_tags)
 }
 
-module "linux_web_app" {
-  source                                  = "github.com/techslateramu/terraform-modules//azure/linuxwebapp"
-  resource_group_name                     = module.resource_group.name
-  location                                = var.location
-  environment                             = var.environment
-  service_plan_id                         = module.app_service_plan.app_service_id
-  main_project                            = var.main_project
-  sub_project                             = var.sub_project
-  tags                                    = merge(var.tags, var.specific_tags)
-  identity                                = local.identity
-  connection_string                       = local.connection_string
-  site_config                             = local.site_config
-  app_settings                            = local.app_settings
+module "function_app" {
+  source                              = "github.com/techslateramu/terraform-modules//azure/functionapp"
+  location                            = var.location
+  environment                         = var.environment
+  main_project                        = var.main_project
+  sub_project                         = var.sub_project
+  resource_group_name                 = module.resource_group.name
+  app_service_plan_id                 = module.app_service_plan.app_service_id
+  storage_account_name                = module.storage_account.storage_account_name
+  storage_account_primary_access_key  = module.storage_account.storage_primary_access_key
+  os_type                             = var.fapp_os_type
+  funcion_app_version                 = var.ers_function_app_functions_extension_version
+
+  app_settings                        = local.app_settings
+  site_config                         = local.site_config
+  identity                            = var.identity
+  create_function_app_slot            = var.create_function_app_slot
+  tags                                = merge(var.tags, var.specific_tags)
+
+}
+
+module "storage_account" {
+  source                      = "github.com/techslateramu/terraform-modules//azure/storageaccount"
+  environment                 = var.environment
+  main_project                = var.main_project
+  sub_project                 = var.sub_project
+  tags                        = merge(var.tags, var.specific_tags)
+  resource_group_name         = module.resource_group.name
+  location                    = var.location
 }
 
 module "application_insights" {
