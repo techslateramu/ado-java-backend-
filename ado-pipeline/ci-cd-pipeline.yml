@@ -1,1 +1,45 @@
-hello
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  - name: 'JAVA_HOME'
+    value: '/usr/lib/jvm/java-11-openjdk-amd64'
+
+jobs:
+- job: build_and_deploy
+  displayName: 'CI_CD'
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+    - script: |
+        sudo apt-get update
+        sudo apt-get install -y openjdk-11-jdk
+        java -version
+      displayName: 'Install JDK 11'
+
+    - script: |
+        mvn clean package -Dmaven.test.skip=true
+      displayName: 'Build project'
+
+    - task: CopyFiles@2
+      inputs:
+        sourceFolder: '$(System.DefaultWorkingDirectory)/target'
+        contents: '**/*.jar'
+        targetFolder: '$(Build.ArtifactStagingDirectory)'
+
+    - publish: '$(Build.ArtifactStagingDirectory)'
+      artifact: 'JavaPath'
+
+    # - task: AzureFunctionApp@1
+    #   displayName: 'Deploy to Azure Function App'
+    #   inputs:
+    #     azureSubscription: '$(service_connection)'
+    #     appType: 'functionApp'
+    #     appName: '$(function_app_name)'
+    #     package: '$(System.ArtifactsDirectory)/**/*.jar'
+    #     deploymentMethod: 'runFromPackage'
